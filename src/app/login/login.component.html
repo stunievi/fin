@@ -1,0 +1,50 @@
+<section class="container">
+	<div class="title">
+		<a matLine routerLink="/custom/register" routerLinkActive="active">注册</a>
+		<button nz-button [nzType]="'dashed'" [nzShape]="'circle'" matLine routerLink="/index" routerLinkActive="active">
+			<i class="anticon anticon-close"></i>
+		</button>
+	</div>
+	<div class="logo">
+		<img src="./assets/imgs/logo_fin.im.png" alt="" srcset="">
+	</div>
+	<div class="logininput input">
+		<nz-input [nzType]="'text'" [nzPlaceHolder]="'用户名'" [(ngModel)]="user">
+
+		</nz-input>
+		<nz-input [nzType]="'password'" [nzPlaceHolder]="'密码'" [(ngModel)]="password" (ngModelChange)="testInput()">
+			<ng-template #suffix >
+				<div  *ngIf="pwdlen" (click)="clearInput()">
+					<i class="anticon anticon-close-circle-o"></i>
+				</div>
+				
+			</ng-template>
+		</nz-input>
+	</div>
+	<div class="login">
+		<button nz-button [nzType]="'primary'">
+			<span>登录</span>
+		</button>
+		<div class="forget">
+			<span>忘记密码</span>
+		</div>
+	</div>
+	<div class="other-login">
+		<div class="title">
+			<span class="line"></span>
+			<span class="text">第三方登录</span>
+			<span class="line"></span>
+		</div>
+		<div class="icon">
+			<div>
+				<img src="./assets/imgs/qq.png" alt="">
+			</div>
+			<div>
+				<img src="./assets/imgs/weixin.png" alt="">
+			</div>
+			<div>
+				<img src="./assets/imgs/weibo.png" alt="">
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,145 @@
+.container{
+	height: 100%;  
+	.sidenav-container{
+		height: 100%;  
+		.sidenav{
+			width:65%;
+			@media screen and (min-width: 500px) {
+				width:20%;
+				max-width: 200px;
+				min-width: 150px;
+			}
+			padding:5px;
+			.logo{
+				margin:20px 0px;
+				padding:15px;
+				width:100%;
+				img{
+					width:100%; 
+				}
+			}
+			.item{
+				    color: #606060;
+			}
+		}
+		.sidenav-content{
+			background:#f1f5f8;
+			height: fit-content;  
+			
+			.bar{
+				@media (max-width: 599px){
+					margin-top: 48px;
+				}
+				margin-top:56px;
+				position: relative;
+				z-index: 999;
+				.toolbar{
+					
+					@media (max-width: 599px){
+						height: 48px;
+					}
+					background:#404040;
+					display:flex;
+					justify-content: space-between;
+					position: fixed;
+					top: 0;
+					z-index: 1;
+					.item{
+						// flex-grow:1;
+						width:33.33%;
+						
+					}
+					.left{
+						display: flex;
+    					justify-content: flex-start;
+					}
+					.center{
+						display: flex;
+    					justify-content: center;
+					}
+					.right{
+						display: flex;
+    					justify-content: flex-end;
+					}
+					.app-name{
+						color:#fff;
+					}
+					.user-avatar{
+						font-size: 1.5rem;
+					}
+					.flex{
+						display:flex;
+					}
+				}
+				.pc-nav{
+					position:fixed;
+					top:0;
+					z-index: 1;
+					height:56px;
+					width:100%;
+					background:#fff;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					.left{
+						display: flex;
+    					align-items: center;
+					}
+					.title{
+
+					}
+					.right{
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						.search{
+							width:200px;
+							border-radius: 20px;
+							padding:5px 10px;
+							background:#e0e0e0;
+							color:#969696;
+							display: flex;
+							height:35px;
+
+							margin-right: 2rem;
+    						align-items: center;
+							.input{
+								width:90%;
+								font-size: 0.8rem;
+								height:100%;
+								outline:none;
+								border:none;
+								background:transparent;
+								color:#969696;
+							}
+							input::-webkit-input-placeholder{
+								color:#969696;
+							}
+							input::-moz-placeholder{   /* Mozilla Firefox 19+ */
+								color:#969696;
+							}
+							input:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+								color:#969696;
+							}
+							i{
+								width:10%;
+							}
+						}
+						.mainlinkbutton{
+							display:flex;
+							button{
+								color: #969696;
+							}
+						}
+					}
+				}
+			}
+			
+			.app-content{
+				// padding:10px;
+				
+			}
+		}
+	}
+
+}

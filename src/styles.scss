@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html,body{
+	margin: 0;  
+    padding: 0;  
+    height: 100%;  
+    width: 100%;
+}
+//首页卡片
+.msg-list{
+    .ant-card{
+        .ant-card-head{
+            padding:0 24px 0 10px;
+            .ant-card-head-title{
+                display:flex;
+            }
+        }
+        .ant-card-body{
+            padding:24px 10px;
+        }
+    }
+}
+//登录页input
+
+.logininput{
+    nz-input{
+        .ant-input{
+            height:40px;
+            font-size: 14px;
+        }
+    }
+}

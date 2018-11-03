@@ -1,0 +1,36 @@
+section{
+
+	.content{
+		padding-top:10px;
+		background:#fff;
+		height:100vh;
+		.search{
+			margin: 0 auto;
+			width:95%;
+			display: flex;
+			align-items: center;
+			span{
+				font-size: 1.4rem;
+				margin:0 5px;
+			}
+		}
+		.history{
+			width:90%;
+			margin : 0 auto;
+			margin-top:10px;
+			.clear{
+				margin:5px;
+				display: flex;
+				justify-content: space-between;
+				span{
+					margin:5px;
+				}
+			}
+			.list{
+				button{
+					margin:5px;
+				}
+			}
+		}
+	}
+}

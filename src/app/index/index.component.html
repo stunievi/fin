@@ -1,0 +1,105 @@
+<div class="container">
+
+	<mat-drawer-container class="sidenav-container" autosize>
+		<mat-drawer #drawer id="drawer" class="sidenav" [mode]="mobileQuery.matches ? 'over' : 'side'" [opened]="!mobileQuery.matches"
+		 (openedStart)="sidenavopen()" (closedStart)="sidenavclose()">
+			<div class="logo">
+				<img src="./assets/imgs/logo_text.svg.png" alt="" srcset="">
+			</div>
+			<mat-nav-list (click)="drawer.close()" *ngIf="mobileQuery.matches">
+				<mat-list-item *ngFor="let link of link" (click)="choice(link.id);" [style.background-color]="linkChoice == link.id ? 'rgb(240,240,240)': ' '">
+					<a matLine routerLink="{{link.href}}" routerLinkActive="active" [innerHTML]="link.title">首页</a>
+					<button mat-icon-button>
+						<mat-icon>{{link.icon}}</mat-icon>
+					</button>
+				</mat-list-item>
+			</mat-nav-list>
+			<mat-nav-list *ngIf="!mobileQuery.matches">
+				<mat-list-item class="item" *ngFor="let link of link" (click)="choice(link.id);" [style.background-color]="linkChoice == link.id ? 'rgb(240,240,240)': ' '">
+					<a matLine routerLink="{{link.href}}" routerLinkActive="active" [innerHTML]="link.title">首页</a>
+					<button mat-icon-button>
+						<mat-icon>{{link.icon}}</mat-icon>
+					</button>
+				</mat-list-item>
+			</mat-nav-list>
+		</mat-drawer>
+
+		<div class="sidenav-content">
+			<div class="bar" >
+				<mat-toolbar color="primary" class="toolbar" *ngIf="mobileQuery.matches">
+					<div class="item left">
+						<button class="mat-icon-button flex" (click)="drawer.toggle()">
+							<mat-icon>menu</mat-icon>
+						</button>
+					</div>
+
+					<div class="item center">
+						<h1 class="app-name">{{name}}</h1>
+					</div>
+
+					<div class="item right">
+						<button mat-icon-button routerLink="/main/search" routerLinkActive="active">
+							<mat-icon>search</mat-icon>
+						</button>
+						<button mat-icon-button routerLink="/custom/login" routerLinkActive="active">
+							<!-- <nz-avatar nzIcon="user"></nz-avatar> -->
+							<i class="anticon anticon-user user-avatar"></i>
+						</button>
+					</div>
+
+				</mat-toolbar>
+				<nav *ngIf="!mobileQuery.matches" class="pc-nav" id="pc-nav">
+					<div class="left">
+						<button mat-icon-button (click)="drawer.toggle()">
+							<mat-icon>menu</mat-icon>
+						</button>
+					</div>
+					<div class="title">
+						<!-- <span>首页</span> -->
+					</div>
+					<div class="right">
+						<div class="search">
+							<input matInput placeholder="Favorite food" placeholder="搜你想搜的" class="input">
+							<i class="anticon anticon-search"></i>
+						</div>
+						<div class="mainlinkbutton">
+
+							<div *ngIf="topNavButton">
+								<button mat-icon-button>
+									<mat-icon>home</mat-icon>
+								</button>
+								<button mat-icon-button>
+									<mat-icon>donut_large</mat-icon>
+								</button>
+								<button mat-icon-button>
+									<mat-icon>favorite</mat-icon>
+								</button>
+								<button mat-icon-button>
+									<mat-icon>thumb_up</mat-icon>
+								</button>
+								<button mat-icon-button>
+									<mat-icon>notifications</mat-icon>
+								</button>
+							</div>
+							<button mat-icon-button>
+								<mat-icon>mode_edit</mat-icon>
+							</button>
+						</div>
+
+						<div>
+							<button mat-icon-button>
+								<nz-avatar nzIcon="user" class="avater" [nzSize]="'small'"></nz-avatar>
+							</button>
+						</div>
+
+					</div>
+				</nav>
+			</div>
+			<section class="app-content" id="app-content">
+				<router-outlet></router-outlet>
+			</section>
+
+		</div>
+
+	</mat-drawer-container>
+</div>

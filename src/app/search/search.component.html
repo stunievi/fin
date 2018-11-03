@@ -1,0 +1,32 @@
+<section>
+
+	<div class="content">
+		<div class="search">
+			<span (click)="back()">
+				<i class="anticon anticon-left"></i>
+			</span>
+			<nz-input [nzType]="'search'" [nzPlaceHolder]="'搜你想搜的'" [nzSize]="'large'"></nz-input>
+		</div>
+		
+		<div class="history">
+			<div class="clear">
+				<span>历史记录</span>
+				<span>清除历史记录</span>
+			</div>
+			<div class="list">
+				<button nz-button [nzType]="'dashed'">
+					<span>搜索</span>
+				</button>
+				<button nz-button [nzType]="'dashed'">
+					<span>历史上的今天</span>
+				</button>
+				<button nz-button [nzType]="'dashed'">
+					<span>Dashed</span>
+				</button>
+				<button nz-button [nzType]="'dashed'">
+					<span>新乡</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>

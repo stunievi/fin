@@ -1,0 +1,57 @@
+<section class="container">
+	<div class="title">
+		<a matLine routerLink="/custom/login" routerLinkActive="active">登录</a>
+		<button nz-button [nzType]="'dashed'" [nzShape]="'circle'" (click)="back()">
+			<i class="anticon anticon-close"></i>
+		</button>
+	</div>
+	<div class="logo">
+		<img src="./assets/imgs/logo_fin.im.png" alt="" srcset="">
+	</div>
+	<div class="logininput input">
+		<!-- <nz-input [nzType]="'text'" [nzPlaceHolder]="'用户名'" [(ngModel)]="user">
+			<ng-template #suffix>
+				<div class="notice" style="font-size:0.8rem">
+					<span>4-20个字符,可使用汉字、数字、字母</span>
+				</div>
+			</ng-template>
+		</nz-input> -->
+		<nz-input [nzType]="'text'" [nzPlaceHolder]="'中国大陆手机号'" [(ngModel)]="phone" (ngModelChange)="phoneInput()">
+			<ng-template #suffix>
+				<div>
+					<span>格式错误</span>
+				</div>
+			</ng-template>
+		</nz-input>
+		<nz-input [nzType]="'text'" [nzPlaceHolder]="'请输入验证码'" [(ngModel)]="SMSCode">
+			<ng-template #suffix>
+				<div  >
+					<span>发送验证码</span>
+				</div>
+			</ng-template>
+		</nz-input>
+		<nz-input *ngIf="!pwdType" [nzType]="'password'" [nzPlaceHolder]="'密码'" [(ngModel)]="password" (ngModelChange)="pwdInput()">
+			<ng-template #suffix>
+				<div *ngIf="pwdlen" (click)="pwdTypeToggle()">
+					<!-- <mat-icon>visibility_off</mat-icon> -->
+					<mat-icon>visibility</mat-icon>
+				</div>
+			</ng-template>
+		</nz-input>
+		<nz-input *ngIf="pwdType" [nzType]="'text'" [nzPlaceHolder]="'密码'" [(ngModel)]="password" (ngModelChange)="pwdInput()">
+			<ng-template #suffix>
+				<div *ngIf="pwdlen" (click)="pwdTypeToggle()">
+					<mat-icon>visibility_off</mat-icon>
+				</div>
+			</ng-template>
+		</nz-input>
+	</div>
+	<div class="login">
+		<button nz-button [nzType]="'primary'">
+			<span>注册</span>
+		</button>
+		<div class="forget">
+			<span>邮箱注册</span>
+		</div>
+	</div>
+</section>

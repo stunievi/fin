@@ -1,0 +1,78 @@
+<section class="container" #contai>
+	<div class="content">
+		<div class="edit" matLine routerLink="/index/release" routerLinkActive="active">	
+			<div class="info">
+				<div class="avatar">
+					<nz-avatar nzIcon="user"></nz-avatar>
+				</div>
+
+				<div class="text">
+			 		<span>发布城市新闻、看法或分享照片</span>
+				</div>
+			</div>
+			
+			<div class="extra">
+					<span>
+						<i class="anticon anticon-plus-circle-o"></i>
+					</span>
+			</div>
+		</div>
+		<div class="msg-list" *ngFor="let i of infoList">
+			<nz-card [nzLoading]="false">
+				<ng-template #title class="avater">
+					<div class="user-info">
+						<nz-avatar nzIcon="user"></nz-avatar>
+						<span class="user-name">用户12345</span>
+						<span class="up-date">2018-1-1 00:00</span>
+					</div>
+				</ng-template>
+				<ng-template #extra>
+					<nz-dropdown [nzTrigger]="'click'">
+						<a href class="ant-dropdown-link" nz-dropdown>
+							<i class="anticon anticon-ellipsis"></i>
+						</a>
+						<ul nz-menu>
+							<li nz-menu-item>举报</li>
+						</ul>
+					</nz-dropdown>
+				</ng-template>
+				<ng-template #body>
+					<section class="msg-container">
+						
+						<section class="msg-content">
+							<div class="prage">
+								<h2>终于有了自己的时间护甲</h2>
+								<p class="abstract">
+									今年实现了一个小目标：终于拥有了自己的书架。当我把自己喜欢的、读过的部分图书放进新书架时，真好像有了一个亿！ 不对，一个亿会让我张狂无措，而这个小书架让我安心并由衷喜悦。 
+								</p>
+							</div>
+							
+							<img src="https://upload-images.jianshu.io/upload_images/5659613-110d83a0ab4d320a.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+							 alt="">
+						</section>
+					</section>
+				</ng-template>
+			</nz-card>
+			<div class="card-info">
+				<div class="item">
+					<div class="like">
+						<i class="anticon anticon-like-o"></i>
+						<span class="num">50</span>
+					</div>
+					<div class="like">
+						<i class="anticon anticon-message"></i>
+						<span class="num">50</span>
+					</div>
+				</div>
+				<div class="more">
+				</div>
+		
+			</div>
+		</div>
+	</div>
+
+	<div class="left-component" >
+
+	</div>
+	<nz-back-top [nzTarget]="contai"></nz-back-top>
+</section>
